@@ -51,16 +51,16 @@ Make sure to refer to the available scripts in `package.json`.
 
 ## App Overview
 
-| App  | Dev Deployment | Local Dev Port |
-| ---- | -------------- | -------------- |
-| next |                | 3000           |
-| vite |                | 3001           |
+| App  | Dev Deployment                       | Local Dev Port |
+| ---- | ------------------------------------ | -------------- |
+| next | https://df-monorepo-next.netlify.app | 3000           |
+| vite | https://df-monorepo-vite.netlify.app | 3001           |
 
 ## Resources
 
-| Name    | Description | Link                           |
-| ------- | ----------- | ------------------------------ |
-| UI Docs | Storybook   | https://konvoy-ui.netlify.app/ |
+| Name    | Description | Link                                      |
+| ------- | ----------- | ----------------------------------------- |
+| UI Docs | Storybook   | https://df-monorepo-storybook.netlify.app |
 
 ## Documentation
 
