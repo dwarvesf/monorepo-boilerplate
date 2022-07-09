@@ -1,0 +1,15 @@
+{
+  "extends": "@monorepo-boilerplate/config/tsconfig-base.json",
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "./jest.setup.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "jsx": "preserve"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@monorepo-boilerplate/config",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "files": [
+    "tsconfig-base.json",
+    "tailwind.config.js"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.4"
+  }
+}

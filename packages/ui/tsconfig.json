@@ -1,5 +1,13 @@
 {
-  "extends": "tsconfig/react-library.json",
-  "include": ["."],
+  "extends": "@monorepo-boilerplate/config/tsconfig-base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "./src/scripts/**/*.js", 
+    "./jest.setup.ts"
+  ],
   "exclude": ["dist", "build", "node_modules"]
 }

@@ -1,0 +1,16 @@
+{
+  "name": "@monorepo-boilerplate/api",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "scripts": {
+    "fetch-definitions": "swagger-typescript-api --no-client -p ./src/libs/swagger.json -o ./src/types -n schema.ts"
+  },
+  "dependencies": {
+    "isomorphic-unfetch": "^3.1.0",
+    "mitt": "^3.0.0"
+  },
+  "devDependencies": {
+    "swagger-typescript-api": "^9.3.1"
+  }
+}

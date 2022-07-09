@@ -1,0 +1,10 @@
+{
+  "name": "@monorepo-boilerplate/utils",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "dependencies": {
+    "@reach/auto-id": "^0.17.0",
+    "swr": "^1.3.0"
+  }
+}

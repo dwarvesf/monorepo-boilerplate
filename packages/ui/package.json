@@ -1,19 +1,52 @@
 {
-  "name": "ui",
+  "name": "@monorepo-boilerplate/ui",
   "version": "0.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "license": "MIT",
+  "files": [
+    "./src/styles/*"
+  ],
   "scripts": {
-    "lint": "eslint *.ts*"
+    "storybook": "start-storybook -p 6006",
+    "build:storybook": "build-storybook",
+    "lint": "eslint . --ext .ts,.tsx,.js && stylelint '**/*.css' --allow-empty-input",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix,.js && stylelint '**/*.css' --fix --allow-empty-input",
+    "test": "jest",
+    "test:ci": "jest --env=jsdom --coverage --watchAll=false --maxWorkers=2 --passWithNoTests",
+    "generate-icons": "node ./src/scripts/generate-icon-components.js"
   },
   "devDependencies": {
+    "@monorepo-boilerplate/config": "*",
+    "@monorepo-boilerplate/utils": "*",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addon-storysource": "^6.5.9",
+    "@storybook/react": "^6.5.9",
+    "@tailwindcss/forms": "^0.5.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^28.1.4",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
+    "autoprefixer": "^10.4.7",
+    "babel-jest": "^28.1.2",
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "eslint": "^7.32.0",
-    "eslint-config-custom": "*",
+    "jest": "^28.1.2",
+    "jest-dom": "^4.0.0",
+    "jest-environment-jsdom": "^28.1.2",
+    "postcss": "^8.4.14",
     "react": "^17.0.2",
-    "tsconfig": "*",
+    "react-dom": "^17.0.2",
+    "storybook-addon-next-router": "^4.0.0",
+    "tailwindcss": "^3.1.4",
+    "ts-jest": "^28.0.5",
     "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "classnames": "^2.3.1"
   }
 }
