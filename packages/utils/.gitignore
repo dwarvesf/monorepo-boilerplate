@@ -23,11 +23,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# icons
-/src/components/icons/components
-/src/components/icons/Icons.stories.tsx
-/src/components/icons/index.ts
-
-#storybook
-storybook-static

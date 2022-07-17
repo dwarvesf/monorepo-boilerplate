@@ -1,9 +1,3 @@
-const withTM = require('next-transpile-modules')([
-  '@monorepo-boilerplate/ui',
-  '@monorepo-boilerplate/api',
-  '@monorepo-boilerplate/utils',
-])
-
-module.exports = withTM({
+module.exports = {
   reactStrictMode: true,
-})
+}

@@ -1,10 +1,33 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { User } from '@monorepo-boilerplate/api'
+import Cors from 'cors'
 
-export default function getUsers(
-  _: NextApiRequest,
+// Initializing the cors middleware
+const cors = Cors({
+  methods: ['GET', 'HEAD'],
+})
+
+// Helper method to wait for a middleware to execute before continuing
+// And to throw an error when an error happens in a middleware
+function runMiddleware(req: NextApiRequest, res: NextApiResponse, fn: any) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result: any) => {
+      if (result instanceof Error) {
+        return reject(result)
+      }
+
+      return resolve(result)
+    })
+  })
+}
+
+export default async function getUsers(
+  req: NextApiRequest,
   res: NextApiResponse<User[]>,
 ) {
+  // Run the middleware
+  await runMiddleware(req, res, cors)
+
   setTimeout(() => {
     res.status(200).json([
       {

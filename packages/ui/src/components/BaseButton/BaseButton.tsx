@@ -27,6 +27,7 @@ export const BaseButton = forwardRefWithAs<'button', BaseButtonProps>(
       props.disabled ? 'cursor-not-allowed' : 'cursor-pointer',
     )
 
+    // @ts-ignore
     return React.createElement(as, { className, ...rest, rel, ref })
   },
 )

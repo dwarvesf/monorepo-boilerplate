@@ -1,5 +1,5 @@
 {
-  "extends": "@monorepo-boilerplate/config/tsconfig-base.json",
+  "extends": "@monorepo-boilerplate/config/tsconfig-next.json",
   "include": [
     "next-env.d.ts",
     "**/*.ts",

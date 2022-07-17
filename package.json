@@ -9,15 +9,18 @@
   "scripts": {
     "build": "turbo run build",
     "build:next": "turbo run build --scope=@monorepo-boilerplate/next...",
+    "build:vite": "turbo run build --scope=@monorepo-boilerplate/vite...",
     "dev": "turbo run dev --parallel --no-cache",
     "dev:next": "turbo run dev --scope=@monorepo-boilerplate/next... --no-cache",
+    "dev:vite": "turbo run dev --scope=@monorepo-boilerplate/vite... --no-cache",
     "storybook": "turbo run storybook --scope=@monorepo-boilerplate/ui...",
     "build:storybook": "turbo run build:storybook --scope=@monorepo-boilerplate/ui...",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "test:ci": "turbo run test:ci",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "postinstall": "husky install && cd packages/ui && yarn generate-icons"
+    "postinstall": "husky install && cd packages/ui && yarn generate-icons && cd ../../ && yarn build:deps",
+    "build:deps": "turbo run build --scope=@monorepo-boilerplate/ui --scope=@monorepo-boilerplate/utils --scope=@monorepo-boilerplate/api --no-deps"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",

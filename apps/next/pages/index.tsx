@@ -1,9 +1,10 @@
 import { Button, IconSpinner } from '@monorepo-boilerplate/ui'
 import { useFetchWithCache } from '@monorepo-boilerplate/utils'
-import { client, GET_PATHS } from '@monorepo-boilerplate/api'
+import { Client, GET_PATHS } from '@monorepo-boilerplate/api'
 import { useDisclosure } from '@dwarvesf/react-hooks'
 
 export default function Default() {
+  const client = new Client()
   const { isOpen: willFetchUser, onOpen: triggerFetchUser } = useDisclosure()
 
   const { data, loading } = useFetchWithCache(
@@ -23,7 +24,7 @@ export default function Default() {
       <Button appearance="primary" onClick={() => triggerFetchUser()}>
         Boop to fetch users
       </Button>
-      <pre className="p-4 rounded bg-gray-300 w-[36rem] h-[36rem] overflow-auto">
+      <pre className="p-4 rounded bg-gray-300 w-[36rem] h-[30rem] overflow-auto">
         {!willFetchUser ? (
           'No data.'
         ) : loading ? (

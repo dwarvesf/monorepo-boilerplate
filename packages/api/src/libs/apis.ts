@@ -1,26 +1,27 @@
 import { User } from '../types/schema'
 import fetcher from './fetcher'
 
-// eslint-disable-next-line prefer-destructuring
-const BASE_URL = process.env.BASE_URL || 'api'
-
 // keys for swr
 export const GET_PATHS = {
   getUsers: '/users',
 }
 
 class Client {
+  private baseUrl: string
+
+  constructor(baseUrl = 'http://localhost:3000/api') {
+    this.baseUrl = baseUrl
+  }
+
   headers: HeadersInit = {
     'Content-Type': 'application/json',
   }
 
   getUsers() {
-    return fetcher<User[]>(`${BASE_URL}/users`, {
+    return fetcher<User[]>(`${this.baseUrl}/users`, {
       headers: this.headers,
     })
   }
 }
 
-const client = new Client()
-
-export { client }
+export { Client }

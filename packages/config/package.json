@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
-  "files": [
-    "tsconfig-base.json",
-    "tailwind.config.js"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",

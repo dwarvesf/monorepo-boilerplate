@@ -15,7 +15,7 @@ class MyApp extends App {
           <title>Monorepo boilerplate - NextJS App | Dwarves Foundation</title>
           <meta
             property="og:title"
-            content="NextJS boilerplate | Dwarves Foundation"
+            content="Monorepo boilerplate - NextJS App | Dwarves Foundation"
           />
           <meta name="twitter:site" content="@dwarvesf" />
           <meta name="twitter:card" content="summary_large_image" />

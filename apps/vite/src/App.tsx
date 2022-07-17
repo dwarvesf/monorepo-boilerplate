@@ -1,34 +1,41 @@
+import { Button, IconSpinner } from '@monorepo-boilerplate/ui'
+import { useFetchWithCache } from '@monorepo-boilerplate/utils'
+import { Client, GET_PATHS } from '@monorepo-boilerplate/api'
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function Default() {
+  const client = new Client()
+  const [willFetchUser, setWillFetchUser] = useState(false)
+
+  const { data, loading } = useFetchWithCache(
+    [GET_PATHS.getUsers, willFetchUser],
+    () => {
+      if (!willFetchUser) {
+        return undefined
+      }
+
+      return client.getUsers()
+    },
+  )
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="flex flex-col justify-center items-center space-y-6 py-12">
+      <h1 className="text-4xl text-red-500 font-bold">ViteJS App</h1>
+      <Button appearance="primary" onClick={() => setWillFetchUser(true)}>
+        Boop to fetch users
+      </Button>
+      <div className="text-center">
+        Make sure NextJS App is also running because it's hosting the API.
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <pre className="p-4 rounded bg-gray-300 w-[36rem] h-[30rem] overflow-auto">
+        {!willFetchUser ? (
+          'No data.'
+        ) : loading ? (
+          <IconSpinner />
+        ) : (
+          JSON.stringify(data, undefined, 2)
+        )}
+      </pre>
     </div>
   )
 }
-
-export default App
