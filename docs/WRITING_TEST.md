@@ -15,10 +15,8 @@ Following are some principles:
   they didn't do their (one and only) job.
 - You'll know you implemented correct tests when you rarely have to change tests
   when you refactor code given the same user behavior.
-- Use [Jest](https://jestjs.io/),
-  [React testing library](https://testing-library.com/docs/react-testing-library/intro/),
-  [Cypress](https://www.cypress.io/), and
-  [Mock service worker](https://github.com/mswjs/msw).
+- Use [Jest](https://jestjs.io/) and
+  [React testing library](https://testing-library.com/docs/react-testing-library/intro/)
 
 ## Unit testing
 

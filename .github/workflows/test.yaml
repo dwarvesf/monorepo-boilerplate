@@ -20,9 +20,3 @@ jobs:
         run: |
           yarn
           yarn test:ci
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          build: yarn build:admin
-          start: yarn start:admin
-          project: apps/admin

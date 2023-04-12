@@ -14,11 +14,11 @@
     "fetch-definitions": "swagger-typescript-api --no-client -p ./src/libs/swagger.json -o ./src/types -n schema.ts"
   },
   "dependencies": {
-    "isomorphic-unfetch": "^3.1.0",
+    "isomorphic-unfetch": "^4.0.2",
     "mitt": "^3.0.0"
   },
   "devDependencies": {
-    "swagger-typescript-api": "^9.3.1",
+    "swagger-typescript-api": "^12.0.4",
     "tsup": "^6.1.3"
   }
 }

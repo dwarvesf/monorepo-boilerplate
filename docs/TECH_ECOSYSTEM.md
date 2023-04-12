@@ -14,14 +14,12 @@ instead!**
 
 - [x] [React](https://reactjs.org/)
 - [x] [Next.js](https://nextjs.org/)
+- [x] [Vite.js](https://vitejs.dev/)
 - [x] [SWR](https://swr.vercel.app/)
-- [x] [React Hook Form](https://github.com/react-hook-form/react-hook-form)
-- [x] [Dwarves React Toolkit](https://github.com/dwarvesf/react-toolkit)
 
 ### UI & styling
 
 - [x] [Tailwindcss](https://github.com/tailwindcss/tailwindcss)
-- [x] [Headless UI](https://github.com/tailwindlabs/headlessui)
 
 ### Static type checking & linting
 
@@ -33,7 +31,6 @@ instead!**
 
 - [x] [Jest](http://facebook.github.io/jest/)
 - [x] [react-testing-library](https://github.com/kentcdodds/react-testing-library)
-- [x] [Cypress](https://github.com/cypress-io/cypress)
 
 ## Basic Building Blocks
 
@@ -54,6 +51,15 @@ Production grade React applications that scale, we list
 a React app. The opinionated framework gives you the best developer experience
 with all the features you need for production: hybrid static & server rendering,
 TypeScript support, smart bundling, route pre-fetching.
+
+### Vite.js
+
+[Vite.js](https://vitejs.dev/) is a modern build tool and web development
+framework that is gaining popularity among developers due to its fast build
+times and development server, which significantly reduces the time required to
+build and test web applications. Vitejs leverages modern browser features like
+native ES modules and dynamic imports, enabling a highly efficient development
+process that provides a smooth developer experience
 
 ### React Context
 
@@ -97,12 +103,6 @@ self-updated overtime. It features:
 - [x] Request deduplication
 - [x] Local mutation
 
-### React Hook Forms
-
-If you are going to use a package for your forms, we recommend
-[react-hook-forms](https://github.com/react-hook-form/react-hook-form). It is a
-great balance of good performance and good developer experience.
-
 ### TailwindCSS
 
 We are using `tailwind` to do styling and it scales pretty well when combining
@@ -122,16 +122,6 @@ moving quickly, regardless of experience levels:
 - [x] **Customization**: although Tailwind includes an expertly crafted set of
       defaults out-of-the-box, but literally everything can be customized via
       JIT or `tailwind.config.js`.
-
-## Architecture
-
-Most of the frontend applications consist of four layers: Service connector,
-State management, Logic and UI. We opinionate about the technology for each
-layer with a guarantee of production readiness.
-
-<div align="center">
-    <img src="./img/architecture.png"  align="center" />
-</div>
 
 ## Linting
 

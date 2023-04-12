@@ -64,6 +64,9 @@ Make sure to refer to the available scripts in `package.json`.
 
 ## Documentation
 
+**Disclaimer:** These are sample files, not definite guidelines. Feel free to
+make adjustments as you see fitting for your team & use-cases!
+
 - [Getting started](./docs/GETTING_STARTED.md)
 - [Tech ecosystem](./docs/TECH_ECOSYSTEM.md)
 - [Code style](./docs/CODE_STYLE.md)

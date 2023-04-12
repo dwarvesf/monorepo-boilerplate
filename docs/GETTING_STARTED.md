@@ -1,48 +1,57 @@
 # Getting started
 
+This is a monorepo project using [`turborepo`](https://turborepo.org/).
+
+## Code organization
+
+```
+.
+├── ...
+├── apps
+│   ├── next                              # NextJS App
+│   └── vite                              # ViteJS App
+├── packages
+│   ├── api                               # Shared API config & models
+│   ├── config                            # Shared config (tsconfig, tailwind, etc.)
+│   ├── ui                                # Shared UI components
+│   └── utils                             # Shared utilities
+└── ...
+```
+
+## Development
+
 Install dependencies with `yarn` or `npm`:
 
 ```bash
 yarn install
 ```
 
-Then, you can run locally in development mode with live reload:
+Then you can run all apps at once:
 
 ```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your favorite browser
-to see your project.
+... or run one app only:
 
-## Code organization
+```bash
+yarn dev:next
+# or
+yarn dev:vite
+```
 
-```
-.
-├── README.md                    # README file
-├── next.config.js               # Next JS configuration
-├── public                       # Public folder
-│   └── img                      # Images used by the app
-├── types                        # Shared TypeScript interfaces
-├── components                   # Shared components
-│   └── X
-│       └── X.tsx
-│       └── index.ts
-│       └── X.stories.tsx
-│       └── X.test.tsx
-│── pages                        # Next JS pages
-├── context                      # Shared context state
-├── constants                    # Shared constants
-├── hooks                        # Shared hooks
-│   └── tests
-│── styles                       # PostCSS style folder with Tailwind
-│   └── vendor                   # Third-party CSS
-│── utils                        # Utility folder
-│   └── tests
-│── cypress                      # Cypress configuration and tests
-├── tailwind.config.js           # Tailwind CSS configuration
-└── tsconfig.json                # TypeScript configuration
-```
+## App Overview
+
+| App  | Dev Deployment                       | Local Dev Port |
+| ---- | ------------------------------------ | -------------- |
+| next | https://df-monorepo-next.netlify.app | 3000           |
+| vite | https://df-monorepo-vite.netlify.app | 3001           |
+
+## Resources
+
+| Name    | Description | Link                                      |
+| ------- | ----------- | ----------------------------------------- |
+| UI Docs | Storybook   | https://df-monorepo-storybook.netlify.app |
 
 ### Develop UI components
 
@@ -55,28 +64,6 @@ yarn storybook
 
 The UI document then should be live at
 [http://localhost:6006](http://localhost:6006).
-
-### TypeScript API generator
-
-If your team use Swagger to document APIs, we support a node script to generate
-TypeScript interfaces via your Swagger scheme. In
-[package.json](../package.json), change the default path to the location of your
-Swagger JSON doc.
-
-```
-- "fetch-definitions": "swagger-typescript-api --no-client -p ./libs/swagger.json -o ./types -n schema.ts",
-+ "fetch-definitions": "swagger-typescript-api --no-client -p your-api-swagger-json -o ./types -n schema.ts",
-```
-
-Then, you can run the script locally to generate TypeScript definitions for the
-APIs:
-
-```bash
-yarn fetch-definitions
-```
-
-The generated interfaces will be located at
-[types/schema.ts](../types/schema.ts).
 
 ## Read on:
 

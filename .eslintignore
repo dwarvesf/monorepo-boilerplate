@@ -13,6 +13,5 @@ out
 
 # test
 coverage/*
-cypress
 __stubs__
 __snapshots__
